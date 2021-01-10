@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SyncingTasksApp: App {
+    let service = MoviesWithDispatch()
+//    let service = MoviesWithRxswift()
+//    let service = MoviesWithCombine()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ContentViewModel(service: service))
         }
     }
 }
